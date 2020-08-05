@@ -1,0 +1,43 @@
+Project tutorial:
+
+In this project, there are 6 files. The blackjack environment class is in blackjack.py.
+This class uses classes from the player.py and statcollector.py to run the game. The util.py file contained
+helper methods, enums, as well as a method and class taken from the Berkley pacman reinforcement
+learning project. Besides these two small items, the rest of the project is original and my own work.
+Finally, there is a file blackjack-tests.py, this file contains unit tests that were used to ensure the
+blackjack environment’s correctness during development. This file has no other purpose in terms of the
+project or the research but main be run using “python blackjack-tests.py”.
+
+The main project script is call project-script.py. This file takes in command line arguments in order
+to define the characteristics of the game. Each experiment was run by altering the command line arguments
+to create the appropriate rules. Each command line has a default option and therefore the script can be
+run by typing “python project-script.py” in the command line and pressing enter.
+
+Some example command line entries are below:
+
+python project-script.py
+
+python project-script.py --win-reward=1 --lose-reward=-1 --alpha =0.5 --discount=0.5 --epsilon=0.5 --epsilonDecreasing=False
+
+python project-script.py --win-reward=1 --lose-reward=-1 --alpha=0.1 --discount=0.25 --epsilon=0.25
+
+python project-script.py --win-reward=1 --lose-reward=-1 --alpha=0.9 --discount=0.9 --epsilon=0.9
+
+ python project-script.py --win-reward=5 --push-reward=-2 --lose-reward=-5 --alpha=0.7 --discount=0.5 --epsilon=0.25
+
+python project-script.py --win-reward=1 --lose-reward=-1 --alpha=0.1 --discount=0.25 --epsilon=1 --epsilonDecreasing=True
+
+python project-script.py --win-reward=5 --lose-reward=-10 --alpha=0.1 --discount=0.25 --epsilon=0.5 --epsilonDecreasing=True
+
+
+python project-script.py --win-reward=5 --lose-reward=-5 --alpha=0.1 --discount=0.25 --epsilon=0.25 --epsilonDecreasing=True --epsilonDecreasingFactor=0.025
+
+python project-script.py --win-reward=5 --lose-reward=-5 --alpha=0.1 --discount=0.25 --epsilon=0.5 --epsilonDecreasing=True --epsilonDecreasingFactor=0.05
+
+
+python project-script.py --win-reward=5 --lose-reward=-5 --alpha=0.1 --discount=0.5 --epsilon=0.5 --epsilonDecreasing=True —epsilonDecreasingFactor=0.05
+
+python project-script.py --win-reward=5 --lose-reward=-5 --alpha=0.1 --discount=0.25 --epsilon=0.25 --epsilonDecreasing=True --epsilonDecreasingFactor=0.025 —collapsedStateSpace=True
+
+python project-script.py --win-reward=5 --lose-reward=-5 --alpha=0.1 --discount=0.25 --epsilon=0.25 --epsilonDecreasing=True --epsilonDecreasingFactor=0.025 --qLearningBetting=True
+
