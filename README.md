@@ -1,6 +1,5 @@
 # Blackjack-Q-Learning
 
-
 ### Overview
 The goal of this project was to create a reinforcement learning agent that could learn how to play blackjack effecitively where performance was measured in terms of number of hands won and profit/loss of the agent. The secondary goal was to analyze its performance in more detail in terms of the decisions it learned to make compared to other common strategies used in blackjack. For a very detailed
 
@@ -10,4 +9,12 @@ This project was completely original. The blackjack game simulator was built fro
 
 
 ### The Q-learning agent
+The agent used a standard implementation of the Q-learning algorithm. Different variations/combinations of the hyperparemeters were used for trials to see how they affected the agent's performance. The best version of the agent was when a decreasing learning parameter was used. This seemed to produce the best combination of exploring new actions versus using the knowledge the agent had already gained. THe agents rewards were supplied by the simulation in this iteration of the project, but in future iterations this would change in a future iteration to make the rewards an internal value. The Q-values were representitive of state action pairs as usual. The states' features were the cards held by the agent while the actions were the moves (hit, stay, split, etc...) available to agent with the cards it held in that state. 
 
+As an addition to this agent, I also created a second Q-learning procedure to learn how to bet properly that worked inside the same agent. The previous agent described handled the moves made in game and this agent handled the betting. This added procedure used the same decreasing learning parameter was used. In this case the rewards were the monetary profilts and losses recieved, the states' features consisted of a discretized value representing the difference in the monetary amount the agent started with and the agents current monetary amount,and the actions were double the last bet, betless than the previous bet, bet more than the previous bet, and bet the maximum amount allowed. This additional procedure would get more development in a future iteration of the project.
+
+The resulting agent learned to play almost the same as the optimal agent but with more risk tolerance when it came to being able to split hands. The betting strategy also produced was to essentially bet more once the agent starting losing money; another common mathematical approach to how to choose a bet in blackjack. In the end, the agent was able to turn a smiulated profit through many of the simulations.
+
+
+### Other Players
+In addition to having the Q-learning agent play blackjack I also created three other players to play in the same game. The motivation for this had two reasons. The first reason was to help give context when analyzing the actions the agent had learned. By having players that used an optimal strategy(found through research), a basic strategy, and a random strategy; I was able to find comparisons between them and the agent to understand where the agent learned learned to be risk averse and tolerant of risk. The second reason was to make the game and odds more realistic. When a person plays blackjack at a casino, it is rare to have only one player at the table playing. By having more players in the  simulation at the same time, the Q-learning agent experienced more realistic sequence of individual games when it cames to the odds of the cards dealt.
